@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="stylesheet" href="stylelanding.css">
+  <title>Relojería Santos - Página de Aterrizaje</title>
+</head>
+<body>
+  <!-- Contenedor principal de toda la página -->
+  <div class="cuadroblanco">
+    <!-- BARRA LATERAL CON ICONOS DE REDES SOCIALES -->
+    <div class="barralateral">
+      <div class="icono_home"><a href="#home" title="Home"></a></div>
+      
+      <div class="icono_facebook"><a href="#" target="_blank" title="Facebook"></a></div>
+      <div class="icono_instagram"><a href="#" target="_blank" title="Instagram"></a></div>
+      <div class="icono_youtube"><a href="#" target="_blank" title="YouTube"></a></div>
+      <div class="icono_twitter"><a href="#" target="_blank" title="Twitter"></a></div>
+    </div>
+
+    <!-- CONTENIDO PRINCIPAL DE LA PÁGINA -->
+    <div class="contenido-principal">
+      <!-- ENCABEZADO CON TÍTULO Y NAVEGACIÓN -->
+      <div class="header">
+        <div class="titulo">
+          <h1>RELOJERÍA SANTOS</h1>
+        </div>
+        <!-- Menú de navegación horizontal -->
+        <nav class="menu-navegacion">
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#booking">Booking</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <!-- Número de teléfono destacado -->
+            <li><span class="telefono">(+605) 1234-56789</span></li>
+          </ul>
+        </nav>
+      </div>
+<!-- SECCIÓN HERO Y FORMULARIO (LAYOUT DE DOS COLUMNAS) -->
+      <div class="hero-y-formulario">
+        <div class="hero-section">
+          <!-- Contenedor de imagen principal -->
+          <div class="img-container">
+            <img src="Relojes-de-lujo.webp" alt="Relojes de lujo en exhibición">
+            <!-- Overlay verde sobre la imagen para efectos visuales -->
+            <div class="overlay-verde"></div> 
+          </div>
+          <!-- Texto superpuesto sobre la imagen -->
+          <div class="sobreimagen">
+            <h1>Full Dedicated To Your</h1>
+            <span>Relojería la hora</span>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, sapiente odit, molestias dignissimos natus sed delectus dolor.</p>
+            <!-- Botones de llamada a la acción -->
+            <button class="btn">Book Now</button>
+            <button class="btn btn-secondary">Read More</button>
+            <!-- Indicadores de slider/carrusel (radio buttons) -->
+            <div class="indicadores">
+              <input type="radio" name="slider" id="radio1" checked /><label for="radio1"></label>
+              <input type="radio" name="slider" id="radio2" /><label for="radio2"></label>
+              <input type="radio" name="slider" id="radio3" /><label for="radio3"></label>
+              <input type="radio" name="slider" id="radio4" /><label for="radio4"></label>
+            </div>
+          </div>
+        </div>
+<!-- FORMULARIO DE RESERVA -->
+        <div class="form-container">
+          <h2>RESERVAR UN RELOJ</h2> 
+          <form class="appointment-form">
+              <!-- Fila con nombre y apellido -->
+            <div class="form-row">
+              <!-- Campo de correo electrónico -->
+              <div class="form-group">
+                <label for="first-name">Su primer nombre:</label>
+                <input type="text" id="first-name" placeholder="Su primer nombre*" />
+              </div>
+              <!-- Campo de número de contacto -->
+              <div class="form-group">
+                <label for="last-name">Su apellido:</label>
+                <input type="text" id="last-name" placeholder="Su apellido*" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Ingrese su correo electrónico:</label>
+              <input type="email" id="email" placeholder="Su correo electrónico*" />
+            </div>
+            <div class="form-group">
+              <label for="contact">Número de Contacto:</label>
+              <input type="tel" id="contact" placeholder="Su número de contacto*" />
+            </div>
+            <!-- Fila con fecha y hora -->
+            <div class="form-row">
+              <div class="form-group">
+                <label for="date">Fecha</label>
+                <input type="text" id="date" placeholder="📅 Fecha de la cita*" />
+              </div>
+              <div class="form-group">
+                <label for="time">Hora</label>
+                <input type="text" id="time" placeholder="⏰ Hora de la cita*" />
+              </div>
+            </div>
+            <!-- Botón de envío del formulario -->
+            <button type="submit" class="btn submit-btn">Reservar Ahora</button>
+          </form>
+        </div>
+      </div>
+      <!-- SECCIÓN GLOSARIO DE RELOJES -->
+      <div class="glossary-container">
+        <h1>Glosario de Relojes</h1>
+         <!-- Contenedor de elementos del glosario -->
+        <div class="glossary-wrapper">
+          <!-- Elemento 1: Reloj Automático -->
+          <div class="glossary-item">
+            <img src="D_NQ_NP_893924-MCO49583496930_042022-O.webp" alt="Reloj Automático">
+            <div class="glossary-content">
+              <h3>Reloj Automático</h3>
+              <p>Un reloj automático se carga con el movimiento de la muñeca, sin necesidad de batería.</p>
+            </div>
+          </div>
+          <!-- Elemento 2: Cronógrafo -->
+          <div class="glossary-item">
+            <img src="2-1.webp" alt="Cronógrafo">
+            <div class="glossary-content">
+              <h3>Cronógrafo</h3>
+              <p>Funcionalidad que permite medir intervalos de tiempo, actuando como un cronómetro.</p>
+            </div>
+          </div>
+          <!-- Elemento 3: Movimiento Cuarzo -->
+          <div class="glossary-item">
+            <img src="23792449_57944073_600.webp" alt="Movimiento Cuarzo">
+            <div class="glossary-content">
+              <h3>Movimiento Cuarzo</h3>
+              <p>Utiliza un cristal de cuarzo para mantener el tiempo con gran precisión, alimentado por una batería.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

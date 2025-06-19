@@ -1,0 +1,436 @@
+/* 
+   RESETEO GLOBAL Y VARIABLES CSS PERSONALIZADAS
+  */
+
+/* Variables CSS para mantener consistencia en colores y facilitar mantenimiento */
+:root {
+  --bodybackground: #1fa975;        /* Verde principal del fondo del body */
+  --iconos: #1a9264;                /* Verde para iconos y elementos destacados */
+  --barralateral-bg: #08544c;       /* Verde oscuro para la barra lateral */
+  --texto-claro: #fff;              /* Blanco para texto sobre fondos oscuros */
+  --texto-oscuro: #333;             /* Gris oscuro para texto principal */
+  --color-primario-resaltado: #1fa975; /* Verde de resaltado */
+  
+  font-size: 16px;                  /* Tamaño base de fuente */
+}
+
+/* Reseteo universal para eliminar márgenes y padding por defecto */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;           /* Incluye padding y border en el ancho total */
+}
+
+/* Estilos base del body */
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--bodybackground);
+  color: var(--texto-oscuro);
+}
+
+/* 
+   ESTRUCTURA PRINCIPAL DEL LAYOUT
+    */
+
+/* Contenedor principal que simula una "caja blanca" centrada */
+.cuadroblanco {
+  width: 95%;                       /* 95% del ancho de la ventana */
+  max-width: 1800px;                /* Ancho máximo para pantallas grandes */
+  min-height: 95vh;                 /* Altura mínima del 95% de la ventana */
+  padding-left: 5%;                 /* Espacio reservado para la barra lateral */
+  background-color: var(--texto-claro);
+  margin: 2.5vh auto;               /* Centrado vertical y horizontal */
+  position: relative;               /* Permite posicionamiento absoluto de hijos */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Sombra para dar profundidad */
+  font-size: 0;                     /* Elimina espacios entre elementos inline-block */
+}
+
+/* Contenedor del contenido principal (todo excepto barra lateral) */
+.contenido-principal {
+  width: 100%;
+  display: inline-block;
+  vertical-align: top;
+  font-size: 16px;                  /* Restaura el tamaño de fuente */
+  padding: 2rem;
+}
+
+/* 
+   BARRA LATERAL DE ICONOS SOCIALES
+    */
+
+/* Barra lateral fija en el lado izquierdo */
+.barralateral {
+  width: 5%;                        /* Ancho fijo del 5% */
+  height: 100%;                     /* Altura completa del contenedor padre */
+  background-color: var(--barralateral-bg);
+  position: absolute;               /* Posicionamiento absoluto */
+  top: 0;
+  left: 0;
+  padding-top: 2rem;
+  text-align: center;
+}
+
+/* Espaciado entre iconos de la barra lateral */
+.barralateral div {
+  margin-bottom: 2rem;
+}
+
+/* Área clickeable de cada icono */
+.barralateral a {
+  display: block;
+  width: 100%;
+  height: 45px;
+  position: relative;               /* Para posicionar el pseudo-elemento */
+}
+
+/* Pseudo-elemento que contiene los iconos usando la fuente Remix Icon */
+.barralateral a::before {
+  font-family: "remixicon";         /* Fuente de iconos */
+  color: var(--iconos);
+  font-size: 2.5rem;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);      /* Centrado horizontal perfecto */
+}
+
+/* Códigos Unicode específicos para cada icono de Remix Icon */
+.icono_home a::before { content: "\ea79"; }        /* Icono de casa */
+.icono_facebook a::before { content: "\ecbc"; }    /* Icono de Facebook */
+.icono_instagram a::before { content: "\ee66"; }   /* Icono de Instagram */
+.icono_youtube a::before { content: "\f2d4"; }     /* Icono de YouTube */
+.icono_twitter a::before { content: "\f23a"; }     /* Icono de Twitter */
+
+/* 
+   CABECERA Y NAVEGACIÓN PRINCIPAL
+   */
+
+/* Sección del encabezado */
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* Título principal de la empresa */
+.titulo h1 {
+  color: var(--texto-oscuro);
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+/* Lista de navegación sin viñetas */
+.menu-navegacion ul {
+  list-style-type: none;
+}
+
+/* Elementos del menú en línea horizontal */
+.menu-navegacion li {
+  display: inline-block;
+  margin: 0 2rem;                   /* Espaciado horizontal entre elementos */
+}
+
+/* Enlaces del menú de navegación */
+.menu-navegacion a {
+  text-decoration: none;
+  color: var(--texto-oscuro);
+  font-weight: bold;
+}
+
+/* Estilo especial para el número de teléfono */
+.telefono {
+  font-weight: bold;
+  font-size: 1.25rem;
+  color: var(--iconos);
+}
+
+/* Icono de teléfono antes del número */
+.telefono::before {
+  font-family: "remixicon";
+  content: "\f090";                 /* Código Unicode del icono de teléfono */
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+/* 
+   SECCIÓN HERO Y FORMULARIO (LAYOUT DE DOS COLUMNAS)
+   */
+
+/* Contenedor padre que elimina espacios entre elementos inline-block */
+.hero-y-formulario {
+  font-size: 0;
+}
+
+/* Ambas columnas (hero y formulario) con ancho del 50% cada una */
+.hero-section, .form-container {
+  display: inline-block;
+  vertical-align: top;              /* Alineación superior */
+  width: 50%;
+  font-size: 16px;                  /* Restaura tamaño de fuente */
+  position: relative;
+}
+
+/* Contenedor de la imagen principal */
+.img-container {
+  width: 100%;
+  height: 600px;                    /* Altura fija para consistencia */
+  position: relative;               /* Para posicionar overlay y texto */
+}
+
+/* Imagen principal que cubre todo el contenedor */
+.img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;                /* Mantiene proporción, puede recortar */
+}
+
+/* Overlay verde semitransparente sobre la imagen */
+.overlay-verde {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(8, 84, 76, 0.6); /* Verde con 60% de opacidad */
+}
+
+/* Texto superpuesto centrado sobre la imagen */
+.sobreimagen {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centrado perfecto horizontal y vertical */
+  color: var(--texto-claro);
+  max-width: 80%;                   /* Evita que el texto toque los bordes */
+  text-align: center;
+}
+
+/* Títulos y subtítulos en la sección hero */
+.sobreimagen h1, .sobreimagen span {
+  font-size: 2rem;
+}
+
+/* Subtítulo destacado */
+.sobreimagen span {
+  font-weight: bold;
+  color: var(--color-primario-resaltado);
+  display: block;                   /* Fuerza salto de línea */
+}
+
+/* Párrafo descriptivo */
+.sobreimagen p {
+  margin: 1rem 0;
+}
+
+/* 
+   SISTEMA DE BOTONES
+    */
+
+/* Estilo base para todos los botones */
+.btn {
+  background-color: var(--iconos);
+  color: var(--texto-claro);
+  border: 2px solid var(--iconos);
+  padding: 10px 25px;
+  border-radius: 30px;              /* Bordes redondeados */
+  cursor: pointer;
+  font-weight: bold;
+  margin: 0 5px;
+  transition: all 0.3s ease;        /* Transición suave para hover */
+}
+
+/* Efecto hover para botones principales */
+.btn:hover {
+  background-color: transparent;
+  color: var(--iconos);
+}
+
+/* Botón secundario (transparente por defecto) */
+.btn.btn-secondary {
+  background-color: transparent;
+  border-color: var(--texto-claro);
+}
+
+/* Hover del botón secundario */
+.btn.btn-secondary:hover {
+  background-color: var(--iconos);
+  color: var(--texto-claro);
+}
+
+/* Botón de envío del formulario centrado */
+.submit-btn {
+  display: block;
+  margin: 1.5rem auto 0;
+}
+
+/* Hover específico para el botón de envío */
+.submit-btn:hover {
+    color: var(--iconos);
+}
+
+/* 
+   INDICADORES DE SLIDER/CARRUSEL
+    */
+
+/* Contenedor de los indicadores */
+.indicadores {
+  margin-top: 1.5rem;
+}
+
+/* Oculta los radio buttons nativos */
+.indicadores input[type="radio"] {
+  display: none;
+}
+
+/* Círculos visuales que representan cada slide */
+.indicadores label {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;               /* Forma circular */
+  background-color: rgba(255, 255, 255, 0.5); /* Semitransparente */
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+/* Estado activo del indicador */
+.indicadores input:checked + label {
+  background-color: var(--texto-claro); /* Completamente opaco */
+}
+
+/* 
+   FORMULARIO DE RESERVA
+    */
+
+/* Contenedor del formulario con padding lateral */
+.form-container {
+  padding: 0 2rem;
+}
+
+/* Título del formulario */
+.form-container h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  color: var(--color-primario-resaltado);
+  margin-bottom: 2rem;
+}
+
+/* Filas del formulario que contienen dos campos */
+.form-row {
+  font-size: 0;                     /* Elimina espacios entre elementos inline */
+}
+
+/* Campos dentro de las filas (dos por fila) */
+.form-row .form-group {
+  width: 50%;
+  display: inline-block;
+  vertical-align: top;
+  font-size: 16px;
+}
+
+/* Padding para separar campos en la misma fila */
+.form-row .form-group:first-child {
+  padding-right: 1rem;
+}
+
+.form-row .form-group:last-child {
+  padding-left: 1rem;
+}
+
+/* Grupo de campo individual */
+.form-group {
+  margin-bottom: 1rem;
+}
+
+/* Etiquetas de los campos */
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+/* Campos de entrada (inputs) */
+input {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 30px;              /* Bordes redondeados consistentes */
+  border: none;
+  background: #f0f0f0;              /* Fondo gris claro */
+  font-size: 1rem;
+}
+
+/* Estilo italic para placeholders */
+input[placeholder] {
+  font-style: italic;
+}
+
+/*
+   SECCIÓN DE GLOSARIO DE RELOJES
+    */
+
+/* Contenedor principal del glosario */
+.glossary-container {
+  padding: 4rem 2rem 2rem;
+  clear: both;                      /* Evita que flote junto a otros elementos */
+}
+
+/* Título del glosario */
+.glossary-container h1 {
+  text-align: center;
+  color: #0056b3;                   /* Azul específico para esta sección */
+  margin-bottom: 30px;
+}
+
+/* Contenedor de las tarjetas del glosario */
+.glossary-wrapper {
+  text-align: center;               /* Centra las tarjetas si hay espacio extra */
+  font-size: 0;                     /* Eliminar espacios entre inline-block */
+}
+
+/* Cada elemento/tarjeta del glosario */
+.glossary-item {
+  width: 30%;                       /* Tres columnas con espacio entre ellas */
+  display: inline-block;
+  vertical-align: top;
+  font-size: 16px;                  /* Restaurar tamaño de fuente */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Sombra sutil */
+  margin: 0 1.5% 25px;              /* Margen para simular gap entre tarjetas */
+  transition: transform 0.2s ease-in-out; /* Animación suave para hover */
+}
+
+/* Efecto hover que eleva la tarjeta */
+.glossary-item:hover {
+  transform: translateY(-5px);      /* Mueve hacia arriba */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Sombra más pronunciada */
+}
+
+/* Imágenes de las tarjetas del glosario */
+.glossary-item img {
+  width: 100%;
+  height: 200px;                    /* Altura fija para consistencia */
+  object-fit: cover;                /* Mantiene proporción, puede recortar */
+  display: block;
+  border-top-left-radius: 8px;     /* Bordes redondeados solo en la parte superior */
+  border-top-right-radius: 8px;
+}
+
+/* Contenido de texto de cada tarjeta */
+.glossary-content {
+  padding: 15px;
+  text-align: center;
+}
+
+/* Títulos de las tarjetas */
+.glossary-content h3 {
+  color: #0056b3;                   /* Mismo azul del título principal */
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+/* Texto descriptivo de las tarjetas */
+.glossary-content p {
+  font-size: 0.9em;
+  color: #666;                      /* Gris medio para texto secundario */
+  line-height: 1.5;                 /* Mejor legibilidad */
+}
